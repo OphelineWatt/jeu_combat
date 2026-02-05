@@ -68,7 +68,14 @@ export default {
       } else {
         this.enemyTurn();
       }
+    },
+    resetGame() {
+    this.playerHp = 100;
+    this.enemyHp = 100;
+    this.statusMessage = "Commencer le combat !";
+    this.isGameOver = false;
   }
+
 },
 
   data() {
@@ -91,11 +98,11 @@ export default {
     <PlayerPanel name="Joueur" :hp="playerHp" :maxHp="maxHp" />
     <PlayerPanel name="Ennemi" :hp="enemyHp" :maxHp="maxHp" />
 
-    <ActionButtons @attack-light="console.log('attaque légère')" @attack-heavy="console.log('attaque lourde')" @heal="console.log('soin')" />
+    <ActionButtons @attack-light="attackLight" @attack-heavy="attackHeavy" @heal="heal" />
 
     <StatusMessage :message="statusMessage" />
 
-    <button>Rejouer</button>
+    <button @click="resetGame">Rejouer</button>
   </main>
 </template>
 

@@ -1,5 +1,7 @@
 <template>
-  <!-- contenu à venir -->
+    <div class="dialog-box">
+    <p class="dialog-message">{{ message }}</p>
+    </div>
 </template>
 
 <script>
