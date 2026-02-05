@@ -2,6 +2,8 @@
   <div class="player-panel">
     <h2 class="player-name">{{ name }}</h2>
 
+    <img :src="img" alt="représentation du perso">
+
     <div class="hp-container">
       <div class="hp-bar">
         <div class="hp-fill" :style="{ width: (hp / maxHp * 100) + '%' }"></div>
@@ -26,6 +28,10 @@ export default {
     maxHp: {
       type: Number,
       required: true
+    },
+    img: {
+      type: String,
+      required: false
     }
   }
 }
@@ -71,5 +77,11 @@ export default {
 .hp-text {
   margin-top: 5px;
   font-size: 12px;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 </style>
